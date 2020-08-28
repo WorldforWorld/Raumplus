@@ -1,0 +1,158 @@
+.hero
+  padding-top: 200px
+  padding-bottom: 52px
+  position: relative
+  &::before
+    margin-top: 102px
+    content: ''
+    position: absolute
+    background: $hero
+    top: 0
+    left: 0
+    width: 50%
+    height: 84%
+  &-header
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    &-wrap
+      position: fixed
+      left: 0
+      top: 0
+      width: 100%
+      z-index: 99
+      background: $background
+  &-logo
+    position: relative
+    max-width: 68px
+    font-weight: bold
+    font-size: 14px
+    line-height: 18px
+    color: #0E0A19
+    text-decoration: none
+    &::before
+      content: ''
+      position: absolute
+      bottom: 5px
+      right: 0
+      display: flex
+      width: 15px
+      height: 7px
+      background: url('../img/border.svg') no-repeat center / cover
+  &-contacts
+    display: flex
+    position: relative
+  &-address
+    display: flex
+    align-self: center
+    margin-top: 3px
+    margin-right: 27px
+    flex-direction: row
+    font-weight: 600
+    font-size: 12px
+    line-height: 12px
+    &::before
+      content: ''
+      background: url('../img/map.svg') no-repeat center / cover
+      display: block
+      width: 9px
+      height: 11px
+      margin-right: 11px
+  &-phone
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 142px
+    font-weight: 600
+    font-size: 12px
+    line-height: 12px
+    text-decoration: none
+    padding: 16px
+    background: $bg-phone
+    color: $background
+  &-action
+    font-weight: normal
+    font-size: 12px
+    line-height: 12px
+    margin-bottom: 5px
+  &-hamburger
+    position: relative
+    display: block
+    width: 70px
+    height: 70px
+    background-color: $hamburger
+    cursor: pointer
+    margin-left: 30px
+    & span
+      position: absolute
+      display: block
+      transition: 0.5s
+      top: 22px
+      left: 50%
+      margin-left: -18px
+      width: 36px
+      background-color: $background
+      &::before, &::after
+        content: ''
+        position: absolute
+        display: block
+        transition: 0.5s
+        left: 50%
+        margin-left: -18px
+        width: 36px
+        height: 4px
+        background-color: $background
+      &::after
+        transform: translateY(15px)
+    &_active
+      & span
+        top: 27px
+        &::after
+          transform: rotate(-45deg)
+        &::before
+          transform: rotate(45deg)
+  &-menu
+    display: flex
+    position: absolute
+    margin-top: 70px
+    z-index: 20
+    overflow-y: auto
+    right: 0
+    transition: 0.5s
+    transform: rotateY(90deg)
+    transform-origin: right center
+    &_active
+      transform: rotateY(0deg)
+  &-list
+    display: flex
+    flex-direction: column
+  &-link
+    text-decoration: none
+    font-weight: 600
+    font-size: 16px
+    line-height: 12px
+    text-decoration: none
+    padding: 16px
+    background: $bg-phone
+    color: $background
+    transition: 0.5s
+    &:hover
+      background: $hamburger
+
+      /** content **/
+
+  &-content
+    display: flex
+    max-height: 475px
+  &-image
+    max-width: 670px
+    max-height: 475px
+  &-text
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    width: 50%
+  &-button
+    margin-left: 14%
+

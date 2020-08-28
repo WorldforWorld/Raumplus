@@ -1,0 +1,103 @@
+.economy
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    background: $hero
+    top: 0
+    right: 0
+    width: 30%
+    height: 100%
+    z-index: -1
+  &-wrap
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+  &-block
+    &:nth-of-type(2)
+      position: relative
+      padding: 42px 0 32px 100px
+      &::before
+        content: ''
+        position: absolute
+        background: $hero
+        top: 0
+        right: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+  &-title
+    margin-bottom: 114px
+    &::before
+      right: -48px
+    &_red
+      max-width: 219px
+      display: block
+      margin-right: 54px
+  &-text
+    display: flex
+    flex-direction: row
+    align-items: center
+  &-percentage
+    font-weight: 600
+    font-size: 309px
+    line-height: 321px
+    color: $hamburger
+    margin-right: -50px
+    &_small
+      font-size: 84px
+      line-height: 96px
+  &-header
+    display: inline-block
+    max-width: 335px
+    font-weight: 600
+    font-size: 18px
+    line-height: 19px
+  &-policy
+    position: relative
+    display: flex
+    align-items: flex-start
+    font-weight: normal
+    font-size: 12px
+    line-height: 12px
+    color: $bullet
+    &::before
+      content: ''
+      width: 16px
+      height: 10px
+      border: 1px solid $hamburger
+      cursor: pointer
+      margin-right: 15px
+      &--center
+        justify-content: center
+  &-checkbox
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    &:checked ~
+      .economy-policy
+        &::before
+          background: $hamburger url('../img/check.svg') no-repeat center / 0.5rem
+  &-inputfile
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    z-index: -1
+    width: 0.1px
+    height: 0.1px
+    & + label 
+      font-size: 1.25em
+      display: flex
+      flex-direction: row
+      align-items: center
+      width: 270px
+      background-color: $hamburger
+      cursor: pointer
+  &-form
+    margin-top: 24px
+    display: grid
+    grid-template-rows: 112px 112px 112px
+    grid-template-columns: 270px 270px 
+    grid-gap: 20px
+      

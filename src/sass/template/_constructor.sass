@@ -1,0 +1,101 @@
+.constructor
+  margin-top: 300px
+  margin-bottom: 117px
+  &-parcel
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+  &-wrap
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+  &-block
+    display: flex
+    flex-direction: column
+    &:nth-of-type(1)
+      .constructor
+        &-card
+          &:nth-of-type(1)
+            background: $hamburger
+            filter: drop-shadow(0px 40px 40px rgba(126, 136, 173, 0.25))
+            box-shadow: (0px 40px 40px rgba(126, 136, 173, 0.25))
+            .constructor
+              &-title, &-subtitle
+                color: $background
+                max-width: 104px
+    &:nth-of-type(2)
+      .constructor
+        &-card
+          &:nth-of-type(2)
+            position: relative
+            padding: 0
+            display: flex
+            justify-content: flex-start
+            height: 220px
+            overflow: hidden
+            transition: 0.5s
+            &:hover
+              margin-top: -39px
+              transform: translateY(-20px)
+              height: 256px
+            &:hover .constructor-price
+              bottom: 26px
+            .constructor
+              &-price
+                position: absolute
+                bottom: -22px
+                left: 50%
+                transform: translateX(-50%)
+                font-weight: 600
+                font-size: 24px
+                line-height: 25px
+                color: $hamburger
+                transition: 0.5s
+              &-title
+                position: absolute
+                color: $background
+                top: 66px
+                left: 39px
+                max-width: 106px
+                &::before
+                  background: url('../img/border-light.svg') no-repeat center/cover
+                  width: 26px
+                  height: 11px
+                  right: -28px
+  &-card
+    display: flex
+    flex-direction: column
+    padding-left: 30px
+    padding-top: 33px
+    padding-bottom: 70px
+    margin: 15px
+
+  &-title
+    display: inline-block
+    margin: 0
+    margin-bottom: 37px
+    font-weight: 600
+    font-size: 24px
+    line-height: 25px
+  &-subtitle
+    display: inline-block
+    font-weight: normal
+    font-size: 12px
+    line-height: 12px
+    color: $hamburger
+    max-width: 170px
+  &-brainchild
+    .section-title
+      max-width: 193px
+    .constructor
+      &-card
+        padding: 0
+      &-subtitle
+        margin-top: 11px
+        margin-bottom: 65px
+        font-weight: 600
+        font-size: 18px
+        line-height: 19px
+        color: $textcolor
+        max-width: 283px

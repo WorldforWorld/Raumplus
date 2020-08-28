@@ -1,0 +1,96 @@
+.section
+  &-title, &-title_red
+    position: relative
+    margin: 0
+    font-weight: 600
+    font-size: 48px
+    line-height: 50px
+    max-width: 175px
+  &-title
+    &::before
+      content: ''
+      position: absolute
+      bottom: 5px
+      right: 0
+      display: flex
+      width: 58px
+      height: 25px
+      background: url('../img/border.svg') no-repeat center / cover
+    &_red
+      color: $hamburger
+.button
+  position: relative
+  border: none
+  padding: 29px 16px 26px 18px
+  background: $button
+  font-weight: bold
+  font-size: 16px
+  line-height: 21px
+  letter-spacing: 0.02em
+  color: $background
+  cursor: pointer
+  transition: 0.5s
+  outline: none
+  &:hover
+    background: $hamburger
+  &::before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    bottom: 7px
+    left: 7px
+    z-index: -1
+    border: 1px solid $button
+.swiper
+  &-container
+    height: 475px
+  &-pagination
+    &-bullet
+      margin: 30px 0 !important
+      width: 10px
+      height: 10px
+      background: $bullet
+      opacity: 1
+      &-active
+        background: $button
+.slick
+  &-prev, &-next
+    cursor: pointer
+    position: absolute
+    top: -85px
+    right: 20px
+    width: 68px
+    height: 85px
+    border: none
+    background: $hamburger
+    color: transparent
+    outline: none
+    &:hover
+      background: rgba($hamburger , 0.9)
+    &:active
+      box-shadow: inset 0px 0px 20px 3px rgba(0,0,0,0.75)
+    &::before
+      content: ''
+      display: block
+      width: 38px
+      height: 15px
+      margin-left: auto
+      margin-right: auto
+      margin-top: calc( 50% - 19px )
+  &-prev
+    right: 88px
+    &::before
+      background: url('../img/projects/prev.svg') no-repeat center center/ cover
+  &-next
+    &::before
+      background: url('../img/projects/next.svg') no-repeat center center/ cover
+.shadow
+  filter: drop-shadow(0px 40px 40px rgba(126, 136, 173, 0.25))
+  box-shadow: (0px 40px 40px rgba(126, 136, 173, 0.25))
+  
+div#policyCheckboxs-error
+  position: absolute
+  bottom: -15px
+.invalid
+  color: $hamburger
