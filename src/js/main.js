@@ -1,3 +1,13 @@
+// Как только страничка загрузилась 
+window.onload = function () {
+  // проверяем поддерживает ли браузер FormData 
+  if (!window.FormData) {
+    alert("Браузер не поддерживает загрузку файлов на этом сайте");
+  } else {
+    console.log('Hi!')
+  }
+}
+
 /* Открытие всплывающего меню по конпке */
 $('.hero-hamburger').on('click', function () {
   $(this).toggleClass('hero-hamburger_active')
@@ -109,6 +119,8 @@ jQuery(function ($) {
 });
 /* *************************************************** */
 // Валидация формы
+// var form1 = $('.modal - form');
+// var form_data = new FormData(form1[0]);
 $('.modal-form').validate({
   errorClass: "invalid",
   rules: {
@@ -153,10 +165,14 @@ $('.modal-form').validate({
     error.insertAfter($(element));
   },
   submitHandler: function (form) {
+    var form_data = new FormData(form);
     $.ajax({
       type: "POST",
       url: "send.php",
-      data: $(form).serialize(),
+      data: form_data,
+      cache: false,
+      contentType: false,
+      processData: false,
       success: function (response) {
         message.toggleClass('message--visible');
         $(form)[0].reset();
@@ -169,6 +185,9 @@ $('.modal-form').validate({
   }
 });
 /* ************************************************ */
+
+// var form1 = $('.cost - form');
+// var form_data = new FormData(form1[0]);
 $('.cost-form').validate({
   errorClass: "invalid",
   rules: {
@@ -213,10 +232,14 @@ $('.cost-form').validate({
     error.insertAfter($(element));
   },
   submitHandler: function (form) {
+    var form_data = new FormData(form);
     $.ajax({
       type: "POST",
       url: "send.php",
-      data: $(form).serialize(),
+      data: form_data,
+      cache: false,
+      contentType: false,
+      processData: false,
       success: function (response) {
         message.toggleClass('message--visible');
         $(form)[0].reset();
@@ -272,10 +295,14 @@ $('.economy-form').validate({
     error.insertAfter($(element));
   },
   submitHandler: function (form) {
+    var form_data = new FormData(form);
     $.ajax({
       type: "POST",
       url: "send.php",
-      data: $(form).serialize(),
+      data: form_data,
+      cache: false,
+      contentType: false,
+      processData: false,
       success: function (response) {
         message.toggleClass('message--visible');
         $(form)[0].reset();

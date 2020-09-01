@@ -1,11 +1,3 @@
-@media screen and ( max-width: 1293px )
-  .advantages
-    display: none
-  .about
-    margin-top: 80px !important
-  .hero-link
-    &:nth-of-type(5)
-      display: none
 @media screen and ( max-width: 1276px )
   .economy
     &-block
@@ -15,11 +7,49 @@
   .about
     &-wrap
       justify-content: center !important
+@media screen and ( max-width: 1253px )
+  .advantages
+    &-fourth 
+      & img 
+        transform: translateY(0)
+    &-third
+      flex-direction: column
+    &-team
+      flex-direction: row
+      align-items: flex-start
+    &-title
+      &::before 
+        right: -70px
+    &-subblock
+      & h2
+        &::before
+          right: 21px
+@media screen and ( max-width: 1219px )
+  .advantages
+    &-row
+      &:nth-of-type(1)
+        justify-content: center
+        margin-bottom: 30px
+    &-first
+      flex-direction: row
+      align-items: center
+    &-head
+      max-width: 249px
+      &::before 
+        right: 90px
+    &-production 
+      display: flex
+      justify-content: center
 @media screen and ( max-width: 1223px )
   .economy
     &-percentage
       font-size: 200px !important
       line-height: 104px !important
+@media screen and ( max-width: 1149px )
+  .advantages
+    &-row
+      &:nth-of-type(2)
+        justify-content: center
 @media screen and ( max-width: 1150px )
   .economy
     &-text 
@@ -108,6 +138,20 @@
   .cost
     &-information
       padding-top: 50px
+@media screen and ( max-width: 758px )
+  .advantages
+    &-block 
+      flex-direction: column-reverse
+    &-subblock
+      flex-direction: row
+      align-items: flex-start
+      justify-content: space-around
+      & h2
+        &::before 
+          right: -76px
+      & span 
+        margin-bottom: 0
+        margin-top: 16px
 @media screen and ( max-width: 681px )
   .cost
     &-information
@@ -118,6 +162,10 @@
       &:nth-of-type(2) 
         padding: 0 !important
         background: $background
+@media screen and ( max-width: 660px )
+  .advantages
+    &-first
+      flex-direction: column
 @media screen and ( max-width: 609px )
   .cost
     &-information
@@ -129,6 +177,45 @@
   .hero
     &-address
       display: none !important
+@media screen and ( max-width: 594px )
+  .advantages
+    &-row    
+      &:nth-of-type(1)
+        margin-left: auto
+        margin-right: auto
+    &-team
+      flex-direction: column
+      align-items: center
+      & h4
+        margin: auto
+        margin-bottom: 10px
+        max-width: 100%
+        text-align: center
+    &-description
+      text-align: center
+      max-width: 100%
+      margin-bottom: 21px
+    &-first, &-subblock, &-second 
+      margin-left: 0
+    &-subblock
+      flex-direction: column
+      align-items: center
+      & h4
+        max-width: 100%
+    &-exposition
+      margin-bottom: 5px
+    &-exposition, &-descriptions
+      max-width: 100%
+    &-production
+      margin-left: 0
+      margin-top: 30px
+      text-align: center
+    &-image
+      margin: 0
+      margin-top: 15px
+      margin-bottom: 15px
+    &-second
+      margin-top: 30px
 @media screen and ( max-width: 590px )
   .cost-form, .economy-form
     grid-template-columns: 270px !important

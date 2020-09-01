@@ -130,7 +130,7 @@
             <h2 class="section-title cost-title">
               Расчитаем стоимость за 30 минут
             </h2>
-            <form action="send.php" method="POST" class="cost-form">
+            <form action="send.php" method="POST" class="cost-form" enctype="multipart/form-data">
               <div class="cost-group">
                 <label for="cost-user-name" class="cost-label">Введите ваше имя</label>
                 <input type="text" name="userName" class="cost-input" id="cost-user-name" maxlength="15" />
@@ -161,7 +161,7 @@
                   персональных данных</label>
               </div>
               <!-- /.policy -->
-              <button class="button cost-button">Получить расчет</button>
+              <button class="button cost-button" type="submit" name="sendMail">Получить расчет</button>
             </form>
           </div>
           <!-- /.cost-calculate -->
@@ -252,42 +252,50 @@
     <!-- /.projects -->
     <section class="advantages" id="advantages">
       <div class="container">
-        <h2 class="section-title">Почему выбирают нас</h2>
-        <div class="advantages-wrapper">
-          <div class="advantages-block">
+        <div class="advantages-row">
+          <div class="advantages-first">
+            <h2 class="section-title advantages-head">Почему выбирают нас</h2>
             <img src="img/advantages/one.jpg" alt="advantages" class="advantages-image" />
           </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
-            <img src="img/advantages/two.jpg" alt="advantages" class="advantages-image" />
-          </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
-            <div class="advantages-text">
-              <h4 class="advantages-exposition">
-                Raumplus единственный бренд салон Челябинска
-              </h4>
-              <span class="advantages-description">Это гарантия качества, а главное — подлинности Вашего
-                изделия</span>
+          <!-- /.advantages-first -->
+          <div class="advantages-second ">
+            <div class="advantages-block">
+
+              <img src="img/advantages/two.jpg" alt="advantages" class="advantages-image" />
+
+              <div class="advantages-subblock">
+                <div class="advantages-text">
+                  <h4 class="advantages-exposition">Raumplus единственный бренд салон Челябинска</h4>
+                  <span class="advantages-description">Это гарантия качества, а главное — подлинности Вашего
+                    изделия</span>
+                </div>
+                <!-- /.advantages-text -->
+                <h2 class="section-title advantages-title">14</h2>
+                <span class="advantages-subtitle">лет опыта</span>
+              </div>
+              <!-- /.advantages-subblock -->
             </div>
-            <h2 class="section-title advantages-title">14</h2>
-            <span class="advantages-subtitle">лет опыта</span>
-            <!-- /.advantages-text -->
-          </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
-            <div class="advantages-text">
-              <h4 class="advantages-exposition">
-                У нас есть собственное производство
-              </h4>
-              <span class="advantages-description">Наше производство с современным оборудованием находится в
-                городе Челябинске.</span>
+            <!-- /.advantages-block -->
+
+            <div class="advantages-production">
+              <div class="advantages-text">
+                <h4 class="advantages-exposition">
+                  У нас есть собственное производство
+                </h4>
+                <span class="advantages-descriptions">Наше производство с современным оборудованием находится в
+                  городе Челябинске.</span>
+              </div>
+              <!-- /.advantages-text -->
             </div>
-            <!-- /.advantages-text -->
+            <!-- /.advantages-production -->
           </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
-            <div class="advantages-text">
+          <!-- /.advantages-second -->
+
+        </div>
+        <!-- /.advantages-row -->
+        <div class="advantages-row">
+          <div class="advantages-third">
+            <div class="advantages-team">
               <h4 class="advantages-exposition">
                 С вами будет работать Команда профессионалов
               </h4>
@@ -297,19 +305,16 @@
               <h2 class="section-title advantages-title">-%</h2>
               <span class="advantages-subtitle">не экономим на деталях</span>
             </div>
-            <!-- /.advantages-text -->
-          </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
+            <!-- /.advantages-team -->
             <img src="img/advantages/three.jpg" alt="advantages" class="advantages-image" />
           </div>
-          <!-- /.advantages-block -->
-          <div class="advantages-block">
+          <!-- /.advantages-third -->
+          <div class="advantages-fourth">
             <img src="img/advantages/four.jpg" alt="advantages" class="advantages-image" />
           </div>
-          <!-- /.advantages-block -->
+          <!-- /.advantages-fourth -->
         </div>
-        <!-- /.advantages-wrapper -->
+        <!-- /.advantages-row -->
       </div>
       <!-- /.container -->
     </section>
@@ -447,7 +452,7 @@
           <div class="economy-block">
             <span class="economy-header">Заполните форму и наши менеджеры сделают вам расчет и перезвонят</span>
             <div class="cost-calculate">
-              <form action="send.php" method="POST" class="economy-form">
+              <form action="send.php" method="POST" class="economy-form" enctype="multipart/form-data">
                 <div class="cost-group">
                   <label for="economy-user-name" class="cost-label">Введите ваше имя</label>
                   <input type="text" name="userName" class="cost-input" id="economy-user-name" maxlength="15" />
@@ -559,7 +564,7 @@
     <div class="modal-dialog">
       <button class="modal-close"></button>
       <h3 class="modal-title">Оставьте заявку и наш менеджер свяжется с вами</h3>
-      <form action="send.php" method="POST" class="modal-form">
+      <form action="send.php" method="POST" class="modal-form" enctype="multipart/form-data">
         <div class="cost-group">
           <label for="modal-user-name" class="cost-label">Введите ваше имя</label>
           <input type="text" name="userName" class="cost-input" id="modal-user-name" maxlength="15" />
@@ -590,7 +595,7 @@
             персональных данных</label>
         </div>
         <!-- /.policy -->
-        <button class="button cost-button">Получить расчет</button>
+        <button class="button cost-button" type="submit" name="sendMail">Получить расчет</button>
       </form>
       <!-- /.form -->
     </div>

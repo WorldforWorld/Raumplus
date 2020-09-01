@@ -5,12 +5,8 @@ $userEmail = $_POST['userEmail'];
 $userPhone = $_POST['userPhone'];
 
 // Load Composer's autoloader
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
-require 'phpmailer/Exception.php';
-
-// Instantiation and passing `true` enables exceptions
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+require_once('phpmailer/PHPMailerAutoload.php');
+$mail = new PHPMailer;
 
 try {
     //Server settings
@@ -28,17 +24,24 @@ try {
     $mail->setFrom('nneqm388@gmail.com', 'Юрий');
     $mail->addAddress('2091god@mail.ru');     // Add a recipient
 
+    if ( $_FILES['file']['error']==0 ) {
+        move_uploaded_file($_FILES['file']['tmp_name'], 'upload/'.$_FILES['file']['name']);
+        $mail->addAttachment('upload/'.$_FILES['file']['name']);
+    }
+
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Новая заявка с сайта';
-    $mail->Body    = "Имя пользователья ${userName}, его телефон: ${userPhone}. Его почта: ${userEmail}";
+    $mail->Body    = 'Имя пользователья: ' .$userName. '<br> Номер телефона: ' .$userPhone. '<br> E-mail адрес: ' .$userEmail;
 
     if ($mail->send()) {
         echo "ok";
     } else {
         echo "Письмо не отправлено, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
     }
+    unlink('upload/'.$_FILES['file']['name']);
     
-} catch (Exception $e) {
+} 
+catch (Exception $e) {
     echo "Письмо не отправлено, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }
